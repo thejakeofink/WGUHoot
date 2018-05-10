@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/owlIcon"
+        android:layout_width="136dp"
+        android:layout_height="144dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:width="24dp"
+        android:src="@drawable/ic_owl" />
+
+    <TextView
+        android:id="@+id/introText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/owlIcon"
+        android:text="Hey there! Welcome to the WGU app. If this is your first time here feel free to tap each button from top to bottom, in order to have the best experience possible." />
+
+    <Button
+        android:id="@+id/btnViewMentors"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/introText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:onClick="viewMentorsButtonClicked"
+        android:text="View Mentors" />
+
+    <Button
+        android:id="@+id/btnViewAssessments"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnViewMentors"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="viewAssessmentsButtonClicked"
+        android:text="View Assessments" />
+
+    <Button
+        android:id="@+id/btnViewCourses"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnViewAssessments"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="viewCoursesButtonClicked"
+        android:text="View Courses" />
+
+    <Button
+        android:id="@+id/btnViewTerms"
+        android:layout_width="272dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnViewCourses"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="viewTermsButtonClicked"
+        android:text="View Terms" />
+
+    <TextView
+        android:id="@+id/versionNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Version Number Here" />
+
+</RelativeLayout>
