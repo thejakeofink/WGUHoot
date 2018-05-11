@@ -1,9 +1,11 @@
-package collier.mckennon.com.wguhoot;
+package collier.mckennon.com.wguhoot.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import collier.mckennon.com.wguhoot.R;
 
 public class MainActivity extends AppCompatActivity {
 

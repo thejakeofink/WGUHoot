@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="collier.mckennon.com.wguhoot">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        tools:replace="android:icon,android:theme"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TermsActivity" />
-        <activity android:name=".CoursesActivity" />
-        <activity android:name=".AssessmentsActivity" />
-        <activity android:name=".MentorsActivity" />
-        <activity android:name=".AddAssessmentActivity" />
-        <activity android:name=".AddCourseActivity" />
-        <activity android:name=".AddMentorActivity" />
-        <activity android:name=".AddTermActivity"></activity>
+        <activity android:name=".Activity.TermsActivity" />
+        <activity android:name=".Activity.CoursesActivity" />
+        <activity android:name=".Activity.AssessmentsActivity" />
+        <activity android:name=".Activity.MentorsActivity" />
+        <activity android:name=".Activity.AddAssessmentActivity" />
+        <activity android:name=".Activity.AddCourseActivity" />
+        <activity android:name=".Activity.AddMentorActivity" />
+        <activity android:name=".Activity.AddTermActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package collier.mckennon.com.wguhoot;
+package collier.mckennon.com.wguhoot.Activity;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+
+import collier.mckennon.com.wguhoot.R;
 
 public class AddTermActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText startDateET;

@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".AddMentorActivity">
+    tools:context=".Activity.AddMentorActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_margin="16dp"
         android:layout_height="match_parent"
+        android:layout_margin="16dp"
         android:orientation="vertical">
 
 
@@ -34,10 +34,11 @@
                 android:text="Mentor Name: " />
 
             <EditText
+                android:id="@+id/nameET"
                 android:layout_width="match_parent"
-                android:singleLine="true"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,11 +54,12 @@
                 android:text="Mentor Phone: " />
 
             <EditText
+                android:id="@+id/phoneET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:singleLine="true"
                 android:layout_gravity="center_horizontal"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:singleLine="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -73,14 +75,16 @@
                 android:text="Mentor Email: " />
 
             <EditText
+                android:id="@+id/emailET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:singleLine="true"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:singleLine="true" />
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnSaveMentor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save" />

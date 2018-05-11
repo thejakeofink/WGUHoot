@@ -1,7 +1,9 @@
-package collier.mckennon.com.wguhoot;
+package collier.mckennon.com.wguhoot.Activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import collier.mckennon.com.wguhoot.R;
 
 public class AddAssessmentActivity extends AppCompatActivity {
 
