@@ -2,6 +2,7 @@ package collier.mckennon.com.wguhoot.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,6 +57,7 @@ public class AddMentorActivity extends AppCompatActivity {
                     List<Mentor> mentors = Mentor.find(Mentor.class, "name = ?", name);
                     if (mentors.size() > 0) {
                         Mentor mentor = mentors.get(0);
+                        Log.d("Got mentor", "note: " + mentor.getName() + mentor.getPhone());
                         mentor.getName() = newName;
                         mentor.getPhone() = newPhone;
                         mentor.getEmail() = newEmail;

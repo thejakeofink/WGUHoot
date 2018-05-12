@@ -3,16 +3,16 @@ package collier.mckennon.com.wguhoot.Model;
 import com.orm.SugarRecord;
 
 public class Mentor extends SugarRecord {
-    private String name;
-    private int phone;
-    private String email;
-    private long time;
+    String name;
+    String phone;
+    String email;
+    long time;
 
     public Mentor() {
 
     }
 
-    public Mentor(String name, int phone, String email, long time) {
+    public Mentor(String name, String phone, String email, long time) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -27,11 +27,11 @@ public class Mentor extends SugarRecord {
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

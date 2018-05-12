@@ -36,7 +36,6 @@ public class MentorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentors);
         recyclerView = findViewById(R.id.mentorRV);
-
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -159,6 +158,7 @@ public class MentorsActivity extends AppCompatActivity {
             adapter.notifyItemChanged(modifyPos);
         }
     }
+
     @SuppressLint("SimpleDateFormat")
     public static String getDateFormat(long date) {
         return new SimpleDateFormat("dd MMM yyyy").format(new Date(date));
