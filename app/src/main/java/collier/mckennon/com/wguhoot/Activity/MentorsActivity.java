@@ -39,8 +39,10 @@ public class MentorsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mentors);
         SugarContext.init(this.getApplicationContext());
         recyclerView = findViewById(R.id.mentorRV);
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
+
 
         initialCount = Mentor.count(Mentor.class);
 
@@ -52,7 +54,6 @@ public class MentorsActivity extends AppCompatActivity {
             mentors = Mentor.listAll(Mentor.class);
             adapter = new MentorAdapter(MentorsActivity.this, mentors);
             recyclerView.setAdapter(adapter);
-
         }
 
         // Handling swipe to delete mentors
@@ -120,7 +121,6 @@ public class MentorsActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, AddMentorActivity.class);
                 startActivity(intent);
         }
-
         return true;
     }
 
@@ -147,13 +147,10 @@ public class MentorsActivity extends AppCompatActivity {
         if (newCount > initialCount) {
             // A note is added
             Log.d("MentorsActivity", "Adding new mentor");
-
             // Just load the last added note (new)
             Mentor mentor = Mentor.last(Mentor.class);
-
             mentors.add(mentor);
             adapter.notifyItemInserted((int) newCount);
-
             initialCount = newCount;
         }
         if (modifyPos != -1) {

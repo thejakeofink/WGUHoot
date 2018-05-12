@@ -25,10 +25,10 @@ public class AddMentorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mentor);
 
-        nameET = (EditText) findViewById(R.id.nameET);
-        phoneET = (EditText) findViewById(R.id.phoneET);
-        emailET = (EditText) findViewById(R.id.emailET);
-        save = (Button) findViewById(R.id.btnSaveMentor);
+        nameET = findViewById(R.id.nameET);
+        phoneET = findViewById(R.id.phoneET);
+        emailET = findViewById(R.id.emailET);
+        save = findViewById(R.id.btnSaveMentor);
 
         //handle intent
         editingMentor = getIntent().getBooleanExtra("isEditing", false);
