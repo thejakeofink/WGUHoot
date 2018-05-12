@@ -58,9 +58,9 @@ public class AddMentorActivity extends AppCompatActivity {
                     if (mentors.size() > 0) {
                         Mentor mentor = mentors.get(0);
                         Log.d("Got mentor", "note: " + mentor.getName() + mentor.getPhone());
-                        mentor.getName() = newName;
-                        mentor.getPhone() = newPhone;
-                        mentor.getEmail() = newEmail;
+                        mentor.setName(newName);
+                        mentor.setPhone(newPhone);
+                        mentor.setEmail(newEmail);
                         mentor.save();
                     }
                 }

@@ -14,6 +14,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.orm.SugarContext;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,6 +37,7 @@ public class MentorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentors);
+        SugarContext.init(this.getApplicationContext());
         recyclerView = findViewById(R.id.mentorRV);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -163,4 +166,5 @@ public class MentorsActivity extends AppCompatActivity {
     public static String getDateFormat(long date) {
         return new SimpleDateFormat("dd MMM yyyy").format(new Date(date));
     }
+
 }

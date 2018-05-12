@@ -47,7 +47,7 @@ public class MentorAdapter extends RecyclerView.Adapter<MentorAdapter.MentorVH> 
 
         public MentorVH(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.mentorNameListItem);
+            name = itemView.findViewById(R.id.mentorNameListItem);
             itemView.setOnClickListener(this);
         }
 
@@ -58,7 +58,7 @@ public class MentorAdapter extends RecyclerView.Adapter<MentorAdapter.MentorVH> 
     }
 
     public interface OnItemClickListener {
-        public void onItemClick(View view, int position);
+        void onItemClick(View view, int position);
     }
 
     public void SetOnItemClickListener(final OnItemClickListener itemClickListener) {
