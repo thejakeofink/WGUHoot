@@ -42,8 +42,7 @@ public class MentorsActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-
-
+        recyclerView.setAdapter(adapter);
         initialCount = Mentor.count(Mentor.class);
 
         if (savedInstanceState != null) {
@@ -52,7 +51,6 @@ public class MentorsActivity extends AppCompatActivity {
 
         if (initialCount >= 0) {
             mentors = Mentor.listAll(Mentor.class);
-            adapter = new MentorAdapter(MentorsActivity.this, mentors);
             recyclerView.setAdapter(adapter);
         }
 
@@ -91,7 +89,7 @@ public class MentorsActivity extends AppCompatActivity {
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
-
+        adapter = new MentorAdapter(MentorsActivity.this, mentors);
         adapter.SetOnItemClickListener(new MentorAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
