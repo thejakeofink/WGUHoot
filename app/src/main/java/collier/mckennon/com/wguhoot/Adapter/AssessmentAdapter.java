@@ -9,43 +9,43 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import collier.mckennon.com.wguhoot.Model.Mentor;
+import collier.mckennon.com.wguhoot.Model.Assessment;
 import collier.mckennon.com.wguhoot.R;
 
-public class MentorAdapter extends RecyclerView.Adapter<MentorAdapter.MentorVH> {
+public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssessmentVH> {
     Context context;
-    List<Mentor> mentors;
+    List<Assessment> assessments;
 
     OnItemClickListener clickListener;
 
-    public MentorAdapter(Context context, List<Mentor> mentors) {
+    public AssessmentAdapter(Context context, List<Assessment> assessments) {
         this.context = context;
-        this.mentors = mentors;
+        this.assessments = assessments;
     }
 
     @Override
-    public MentorVH onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mentor_item, parent, false);
-        MentorVH viewHolder = new MentorVH(view);
+    public AssessmentVH onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.assessment_item, parent, false);
+        AssessmentVH viewHolder = new AssessmentVH(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(MentorVH holder, int position) {
-        holder.name.setText(mentors.get(position).getName());
+    public void onBindViewHolder(AssessmentVH holder, int position) {
+        holder.title.setText(assessments.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return mentors.size();
+        return assessments.size();
     }
 
-    class MentorVH extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView name;
+    class AssessmentVH extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView title;
 
-        public MentorVH(View itemView) {
+        public AssessmentVH(View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.mentorNameListItem);
+            title = itemView.findViewById(R.id.assessmentTitleListItem);
             itemView.setOnClickListener(this);
         }
 

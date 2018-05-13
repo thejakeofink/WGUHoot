@@ -38,7 +38,7 @@ public class MentorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mentors);
         SugarContext.init(this.getApplicationContext());
-        recyclerView = findViewById(R.id.mentorRV);
+        recyclerView = findViewById(R.id.mentorsRV);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -51,6 +51,7 @@ public class MentorsActivity extends AppCompatActivity {
 
         if (initialCount >= 0) {
             mentors = Mentor.listAll(Mentor.class);
+            adapter = new MentorAdapter(MentorsActivity.this, mentors);
             recyclerView.setAdapter(adapter);
         }
 
@@ -74,7 +75,7 @@ public class MentorsActivity extends AppCompatActivity {
                 mentor.delete();
                 initialCount -= 1;
 
-                Snackbar.make(recyclerView, "Mentor deleted", Snackbar.LENGTH_SHORT)
+                Snackbar.make(recyclerView, "Mentor deleted", Snackbar.LENGTH_LONG)
                         .setAction("UNDO", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -89,7 +90,8 @@ public class MentorsActivity extends AppCompatActivity {
         };
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
-        adapter = new MentorAdapter(MentorsActivity.this, mentors);
+
+
         adapter.SetOnItemClickListener(new MentorAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
