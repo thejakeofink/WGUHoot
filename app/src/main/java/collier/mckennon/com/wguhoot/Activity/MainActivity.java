@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import collier.mckennon.com.wguhoot.Activity.assessment.AssessmentsActivity;
+import collier.mckennon.com.wguhoot.Activity.course.CoursesActivity;
+import collier.mckennon.com.wguhoot.Activity.mentor.MentorsActivity;
+import collier.mckennon.com.wguhoot.Activity.term.TermsActivity;
 import collier.mckennon.com.wguhoot.R;
 
 public class MainActivity extends AppCompatActivity {

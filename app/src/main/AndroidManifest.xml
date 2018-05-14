@@ -25,7 +25,7 @@
             android:value="hoot.db" />
         <meta-data
             android:name="VERSION"
-            android:value="7" />
+            android:value="9" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -33,14 +33,14 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="collier.mckennon.com.wguhoot" />
 
-        <activity android:name=".Activity.TermsActivity" />
-        <activity android:name=".Activity.CoursesActivity" />
-        <activity android:name=".Activity.AssessmentsActivity" />
-        <activity android:name=".Activity.MentorsActivity" />
-        <activity android:name=".Activity.AddAssessmentActivity" />
-        <activity android:name=".Activity.AddCourseActivity" />
-        <activity android:name=".Activity.AddMentorActivity" />
-        <activity android:name=".Activity.AddTermActivity" />
+        <activity android:name=".Activity.term.TermsActivity" />
+        <activity android:name=".Activity.course.CoursesActivity" />
+        <activity android:name=".Activity.assessment.AssessmentsActivity" />
+        <activity android:name=".Activity.mentor.MentorsActivity" />
+        <activity android:name=".Activity.assessment.AddAssessmentActivity" />
+        <activity android:name=".Activity.course.AddCourseActivity" />
+        <activity android:name=".Activity.mentor.AddMentorActivity" />
+        <activity android:name=".Activity.term.AddTermActivity" />
     </application>
 
 </manifest>

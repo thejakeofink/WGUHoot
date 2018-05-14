@@ -1,4 +1,4 @@
-package collier.mckennon.com.wguhoot.Activity;
+package collier.mckennon.com.wguhoot.Activity.mentor;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

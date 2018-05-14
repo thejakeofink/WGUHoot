@@ -1,4 +1,4 @@
-package collier.mckennon.com.wguhoot.Activity;
+package collier.mckennon.com.wguhoot.Activity.mentor;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.AssessmentsActivity">
+    tools:context=".Activity.assessment.AssessmentsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:gravity="center"
         android:text="Assessments"
         android:textSize="24sp" />
 
@@ -21,6 +26,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:text="Please select an assessment to edit below or add an assessment by clicking the button on the top right of the screen. Swipe to delete an assessment." />
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/assessmentsRV"

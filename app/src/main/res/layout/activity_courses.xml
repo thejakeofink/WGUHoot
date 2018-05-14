@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.CoursesActivity">
+    android:orientation="vertical"
+    tools:context=".Activity.course.CoursesActivity">
 
-    <TextView
-        android:id="@+id/coursesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Courses"
-        android:layout_margin="16dp"
-        android:layout_centerHorizontal="true"
-        tools:layout_editor_absoluteX="163dp"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteY="183dp" />
-    <TextView
-        android:layout_below="@+id/coursesTitle"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:layout_height="wrap_content"
-        android:text="Please select a course to edit below or add a course by clicking the button on the top right of the screen."/>
+        android:gravity="center"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Courses"
+            android:textSize="24sp" />
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Please select an course to edit below or add an course by clicking the button on the top right of the screen. Swipe to delete an assessment." />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/coursesRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/course_item">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

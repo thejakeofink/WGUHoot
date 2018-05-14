@@ -1,4 +1,4 @@
-package collier.mckennon.com.wguhoot.Activity;
+package collier.mckennon.com.wguhoot.Activity.assessment;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -67,7 +67,7 @@ public class AddAssessmentActivity extends AppCompatActivity implements View.OnC
                         Log.d("Got assessment", "note: " + assessment.getTitle());
                         assessment.setTitle(newTitle);
                         assessment.setStartDate(newStartDate);
-                        assessment.setStartDate(newEndDate);
+                        assessment.setEndDate(newEndDate);
                         assessment.save();
                     }
                 }
@@ -75,10 +75,6 @@ public class AddAssessmentActivity extends AppCompatActivity implements View.OnC
             }
         });
     }
-
-
-
-
 
     @Override
     public void onClick(View v) {

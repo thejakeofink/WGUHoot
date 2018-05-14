@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:orientation="vertical"
-    tools:context=".Activity.MentorsActivity">
+    tools:context=".Activity.mentor.MentorsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

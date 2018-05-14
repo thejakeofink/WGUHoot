@@ -1,4 +1,4 @@
-package collier.mckennon.com.wguhoot.Activity;
+package collier.mckennon.com.wguhoot.Activity.assessment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -27,7 +27,7 @@ import collier.mckennon.com.wguhoot.R;
 
 public class AssessmentsActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    AssessmentAdapter adapter;
+    AssessmentAdapter adapterAssessments;
     List<Assessment> assessments = new ArrayList<>();
 
     long initialCount;
@@ -42,7 +42,7 @@ public class AssessmentsActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapterAssessments);
         initialCount = Assessment.count(Assessment.class);
 
         if (savedInstanceState != null) {
@@ -51,8 +51,8 @@ public class AssessmentsActivity extends AppCompatActivity {
 
         if (initialCount >= 0) {
             assessments = Assessment.listAll(Assessment.class);
-            adapter = new AssessmentAdapter(AssessmentsActivity.this, assessments);
-            recyclerView.setAdapter(adapter);
+            adapterAssessments = new AssessmentAdapter(AssessmentsActivity.this, assessments);
+            recyclerView.setAdapter(adapterAssessments);
         }
 
         // Handling swipe to delete assessments
@@ -70,7 +70,7 @@ public class AssessmentsActivity extends AppCompatActivity {
                 final int position = viewHolder.getAdapterPosition();
                 final Assessment assessment = assessments.get(viewHolder.getAdapterPosition());
                 assessments.remove(viewHolder.getAdapterPosition());
-                adapter.notifyItemRemoved(position);
+                adapterAssessments.notifyItemRemoved(position);
 
                 assessment.delete();
                 initialCount -= 1;
@@ -81,7 +81,7 @@ public class AssessmentsActivity extends AppCompatActivity {
                             public void onClick(View v) {
                                 assessment.save();
                                 assessments.add(position, assessment);
-                                adapter.notifyItemInserted(position);
+                                adapterAssessments.notifyItemInserted(position);
                                 initialCount += 1;
                             }
                         })
@@ -91,19 +91,20 @@ public class AssessmentsActivity extends AppCompatActivity {
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
-
-        adapter.SetOnItemClickListener(new AssessmentAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent i = new Intent(AssessmentsActivity.this, AddAssessmentActivity.class);
-                i.putExtra("isEditing", true);
-                i.putExtra("assessment_title", assessments.get(position).getTitle());
-                i.putExtra("start_date", assessments.get(position).getStartDate());
-                i.putExtra("end_date", assessments.get(position).getEndDate());
-                modifyPos = position;
-                startActivity(i);
-            }
-        });
+        if (initialCount >= 0) {
+            adapterAssessments.SetOnItemClickListener(new AssessmentAdapter.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, int position) {
+                    Intent i = new Intent(AssessmentsActivity.this, AddAssessmentActivity.class);
+                    i.putExtra("isEditing", true);
+                    i.putExtra("assessment_title", assessments.get(position).getTitle());
+                    i.putExtra("start_date", assessments.get(position).getStartDate());
+                    i.putExtra("end_date", assessments.get(position).getEndDate());
+                    modifyPos = position;
+                    startActivity(i);
+                }
+            });
+        }
     }
 
     @Override
@@ -150,12 +151,12 @@ public class AssessmentsActivity extends AppCompatActivity {
             // Just load the last added note (new)
             Assessment assessment = Assessment.last(Assessment.class);
             assessments.add(assessment);
-            adapter.notifyItemInserted((int) newCount);
+            adapterAssessments.notifyItemInserted((int) newCount);
             initialCount = newCount;
         }
         if (modifyPos != -1) {
             assessments.set(modifyPos, Assessment.listAll(Assessment.class).get(modifyPos));
-            adapter.notifyItemChanged(modifyPos);
+            adapterAssessments.notifyItemChanged(modifyPos);
         }
     }
 

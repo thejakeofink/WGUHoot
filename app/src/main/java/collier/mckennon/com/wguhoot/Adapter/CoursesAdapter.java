@@ -9,43 +9,43 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import collier.mckennon.com.wguhoot.Model.Assessment;
+import collier.mckennon.com.wguhoot.Model.Course;
 import collier.mckennon.com.wguhoot.R;
 
-public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssessmentVH> {
+public class CoursesAdapter extends RecyclerView.Adapter<CoursesAdapter.CourseVH> {
     Context context;
-    List<Assessment> assessments;
+    List<Course> courses;
 
     OnItemClickListener clickListener;
 
-    public AssessmentAdapter(Context context, List<Assessment> assessments) {
+    public CoursesAdapter(Context context, List<Course> courses) {
         this.context = context;
-        this.assessments = assessments;
+        this.courses = courses;
     }
 
     @Override
-    public AssessmentVH onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.assessment_item, parent, false);
-        AssessmentVH viewHolder = new AssessmentVH(view);
+    public CourseVH onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_item, parent, false);
+        CourseVH viewHolder = new CourseVH(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(AssessmentVH holder, int position) {
-        holder.title.setText(assessments.get(position).getTitle());
+    public void onBindViewHolder(CourseVH holder, int position) {
+        holder.title.setText(courses.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return assessments.size();
+        return courses.size();
     }
 
-    class AssessmentVH extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class CourseVH extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
 
-        public AssessmentVH(View itemView) {
+        public CourseVH(View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.assessmentTitleListItem);
+            title = itemView.findViewById(R.id.courseListItem);
             itemView.setOnClickListener(this);
         }
 

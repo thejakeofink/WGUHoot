@@ -1,4 +1,4 @@
-package collier.mckennon.com.wguhoot.Activity;
+package collier.mckennon.com.wguhoot.Activity.term;
 
 import android.content.Intent;
 import android.os.Bundle;
