@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:text="Please select an course to edit below or add an course by clicking the button on the top right of the screen. Swipe to delete an assessment." />
+            android:text="Please select an course to edit below or add an course by clicking the button on the top right of the screen. Swipe to delete a course." />
 
     </LinearLayout>
 
