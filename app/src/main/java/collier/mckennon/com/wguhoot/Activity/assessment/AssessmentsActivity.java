@@ -51,7 +51,11 @@ public class AssessmentsActivity extends AppCompatActivity {
 
         if (initialCount >= 0) {
             assessments = Assessment.listAll(Assessment.class);
-            adapterAssessments = new AssessmentAdapter(AssessmentsActivity.this, assessments);
+            List<AssessmentAdapter.AssessmentItem> items = new ArrayList<>();
+            for (Assessment a : assessments) {
+                items.add(new AssessmentAdapter.AssessmentItem(a, false));
+            }
+            adapterAssessments = new AssessmentAdapter(AssessmentsActivity.this, items, false);
             recyclerView.setAdapter(adapterAssessments);
         }
 

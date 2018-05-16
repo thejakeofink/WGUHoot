@@ -3,23 +3,30 @@ package collier.mckennon.com.wguhoot.Activity.course;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import collier.mckennon.com.wguhoot.Adapter.AssessmentAdapter;
+import collier.mckennon.com.wguhoot.Model.Assessment;
 import collier.mckennon.com.wguhoot.Model.Course;
 import collier.mckennon.com.wguhoot.R;
 
 public class AddCourseActivity extends AppCompatActivity implements View.OnClickListener {
     EditText titleET, startDateET, endDateET;
     DatePickerDialog startDateDialog, endDateDialog;
+    RecyclerView recyclerView;
     String title, startDate, endDate;
     boolean editingCourse;
     long time;
@@ -34,6 +41,7 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
         startDateET = findViewById(R.id.startDateET);
         endDateET = findViewById(R.id.endDateET);
         save = findViewById(R.id.btnSaveCourse);
+        recyclerView = findViewById(R.id.recycle);
         sdf = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
         addDatePickerDialog();
 
@@ -57,6 +65,20 @@ public class AddCourseActivity extends AppCompatActivity implements View.OnClick
                 String newStartDate = startDateET.getText().toString();
                 String newEndDate = endDateET.getText().toString();
                 long newTime = System.currentTimeMillis();
+
+                AssessmentAdapter adapter = new AssessmentAdapter(AddCourseActivity.this, null, true);
+
+                recyclerView.setAdapter(adapter);
+                List<Assessment> assessmentsToAdd = new ArrayList<>();
+
+                for (AssessmentAdapter.AssessmentItem item : adapter.assessments) {
+                    if (item.isChecked) {
+                        assessmentsToAdd.add(item.assessment);
+                    }
+                }
+
+                // assessmentsToAdd will have assessments whose checkbox is checked
+
                 if (!editingCourse) {
                     Course course = new Course(newTitle, newStartDate, newEndDate, newTime);
                     course.save();
